@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f8edf0">
-    <title>Request a Consultation | Muke</title>
+    <meta name="theme-color" content="#f2f3f5">
+    <title>Request a Consultation | Victor &amp; Morgan Associates (Demo)</title>
     <style>
         :root {
             color-scheme: light;
-            --ink: #203b34;
-            --ink-soft: #53655f;
-            --green: #254b3e;
-            --green-dark: #193b31;
-            --pink: #f8edf0;
-            --rose: #b36f82;
-            --line: #e7dfe0;
-            --paper: #fffdfc;
+            --ink: #173768;
+            --ink-soft: #505a69;
+            --navy: #173768;
+            --navy-dark: #10284e;
+            --canvas: #f2f3f5;
+            --gold: #c6a12f;
+            --gold-dark: #876714;
+            --line: #e1e4e8;
+            --paper: #ffffff;
         }
 
         * { box-sizing: border-box; }
@@ -24,7 +25,7 @@
             min-height: 100vh;
             margin: 0;
             padding: 32px 24px 24px;
-            background: var(--pink);
+            background: var(--canvas);
             color: var(--ink);
             font-family: Arial, Helvetica, sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -36,38 +37,45 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 4px 0 28px;
-            border-bottom: 1px solid rgba(32, 59, 52, .13);
+            padding: 16px 20px;
+            border: 1px solid rgba(23, 55, 104, .12);
+            border-radius: 5px;
+            background: #fff;
         }
 
         .brand {
             display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--ink);
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            color: var(--gold-dark);
             font-family: Georgia, 'Times New Roman', serif;
-            font-size: 19px;
+            font-size: 20px;
+            font-style: italic;
             font-weight: 700;
-            letter-spacing: .01em;
+            letter-spacing: .005em;
             text-decoration: none;
         }
 
-        .brand-mark {
-            display: grid;
-            width: 38px;
-            height: 38px;
-            place-items: center;
-            border: 1px solid rgba(37, 75, 62, .25);
-            border-radius: 50%;
-            color: var(--green);
-            font-size: 16px;
+        .brand-subtitle {
+            color: var(--ink);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: .13em;
+            text-transform: uppercase;
         }
 
         .header-note {
-            color: var(--ink-soft);
+            padding: 8px 10px;
+            border: 1px solid rgba(198, 161, 47, .45);
+            border-radius: 3px;
+            background: #fffdf7;
+            color: var(--ink);
             font-size: 12px;
             font-weight: 700;
-            letter-spacing: .13em;
+            letter-spacing: .1em;
             text-transform: uppercase;
         }
 
@@ -83,21 +91,21 @@
 
         .eyebrow {
             margin: 0 0 18px;
-            color: #875363;
+            color: var(--gold-dark);
             font-size: 12px;
             font-weight: 700;
             letter-spacing: .16em;
             text-transform: uppercase;
         }
 
-        h1, h2 { font-family: Georgia, 'Times New Roman', serif; }
+        h1, h2 { font-family: Arial, Helvetica, sans-serif; }
 
         h1 {
             margin: 0;
             color: var(--ink);
             font-size: clamp(38px, 5vw, 58px);
-            font-weight: 500;
-            letter-spacing: -.035em;
+            font-weight: 700;
+            letter-spacing: -.04em;
             line-height: 1.08;
         }
 
@@ -112,8 +120,8 @@
         .service-line {
             margin: 34px 0 0;
             padding-top: 18px;
-            border-top: 1px solid rgba(32, 59, 52, .16);
-            color: var(--green);
+            border-top: 1px solid rgba(23, 55, 104, .16);
+            color: var(--ink);
             font-size: 12px;
             font-weight: 700;
             letter-spacing: .1em;
@@ -123,10 +131,11 @@
 
         .form-card {
             padding: clamp(24px, 4vw, 42px);
-            border: 1px solid rgba(32, 59, 52, .08);
-            border-radius: 8px;
+            border: 1px solid rgba(23, 55, 104, .1);
+            border-top: 3px solid var(--gold);
+            border-radius: 5px;
             background: var(--paper);
-            box-shadow: 0 18px 48px rgba(56, 37, 43, .09);
+            box-shadow: 0 18px 48px rgba(27, 44, 71, .09);
         }
 
         .form-heading { margin-bottom: 24px; }
@@ -135,7 +144,7 @@
             margin: 0;
             color: var(--ink);
             font-size: 27px;
-            font-weight: 500;
+            font-weight: 700;
             letter-spacing: -.02em;
         }
 
@@ -158,17 +167,17 @@
             font-weight: 700;
         }
 
-        .required { color: #9d5369; }
+        .required { color: var(--gold-dark); }
 
         input, select, textarea {
             display: block;
             width: 100%;
             min-height: 46px;
             padding: 11px 12px;
-            border: 1px solid #d9d3d3;
+            border: 1px solid #cbd2dc;
             border-radius: 4px;
             background: #fff;
-            color: #263b35;
+            color: #26354b;
             font: inherit;
             font-size: 15px;
             transition: border-color .15s ease, box-shadow .15s ease;
@@ -179,8 +188,8 @@
         input::placeholder, textarea::placeholder { color: #8a8e8b; }
         input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: var(--rose);
-            box-shadow: 0 0 0 3px rgba(179, 111, 130, .16);
+            border-color: var(--navy);
+            box-shadow: 0 0 0 3px rgba(198, 161, 47, .22);
         }
 
         button {
@@ -191,7 +200,7 @@
             padding: 13px 18px;
             border: 0;
             border-radius: 4px;
-            background: var(--green);
+            background: var(--navy);
             color: #fff;
             cursor: pointer;
             font: inherit;
@@ -201,9 +210,9 @@
             transition: background .15s ease, transform .15s ease;
         }
 
-        button:hover { background: var(--green-dark); }
+        button:hover { background: var(--navy-dark); }
         button:active { transform: translateY(1px); }
-        button:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; }
+        button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
         .notice {
             grid-column: 1 / -1;
@@ -216,7 +225,7 @@
         .form-status {
             grid-column: 1 / -1;
             margin: 12px 0 0;
-            color: var(--green);
+            color: var(--navy);
             font-size: 14px;
             font-weight: 700;
             line-height: 1.5;
@@ -227,7 +236,7 @@
             justify-content: space-between;
             gap: 16px;
             padding: 18px 0 0;
-            border-top: 1px solid rgba(32, 59, 52, .13);
+            border-top: 1px solid rgba(23, 55, 104, .16);
             color: var(--ink-soft);
             font-size: 12px;
             line-height: 1.6;
@@ -248,8 +257,9 @@
 
         @media (max-width: 480px) {
             body { padding: 16px 14px 14px; }
-            .brand { gap: 9px; font-size: 17px; }
-            .brand-mark { width: 34px; height: 34px; }
+            .site-header { align-items: flex-start; flex-direction: column; gap: 12px; }
+            .brand { font-size: 18px; }
+            .header-note { max-width: none; text-align: left; }
             main { gap: 24px; padding-top: 38px; }
             .form-card { padding: 22px 18px; }
             form { grid-template-columns: 1fr; }
@@ -264,22 +274,22 @@
 </head>
 <body>
     <header class="site-header">
-        <a class="brand" href="#top" aria-label="Muke Accounting and Advisory, home">
-            <span class="brand-mark" aria-hidden="true">M</span>
-            <span>Muke</span>
+        <a class="brand" href="#top" aria-label="Victor and Morgan Associates consultation demonstration">
+            <span>Victor &amp; Morgan Associates</span>
+            <span class="brand-subtitle">Chartered Accountants</span>
         </a>
-        <span class="header-note">Accounting &amp; Advisory</span>
+        <span class="header-note">Demonstration concept</span>
     </header>
 
     <main id="top">
         <section class="intro" aria-labelledby="page-title">
-            <p class="eyebrow">A thoughtful first conversation</p>
-            <h1 id="page-title">Let’s talk about what your business needs.</h1>
+            <p class="eyebrow">Trusted financial excellence</p>
+            <h1 id="page-title">Request a consultation with our team.</h1>
             <p class="intro-copy">
-                Tell us a little about your organisation and the support you are looking for.
-                Use this demonstration form to explore how a consultation request could begin.
+                Tell us about your organisation and the support you are looking for.
+                This demonstration shows one way a consultation enquiry could begin.
             </p>
-            <p class="service-line">Audit &nbsp;·&nbsp; Tax &nbsp;·&nbsp; Accounting &nbsp;·&nbsp; Advisory</p>
+            <p class="service-line">Audit Services &nbsp;·&nbsp; Taxation Services &nbsp;·&nbsp; Financial Statements &nbsp;·&nbsp; Corporate Finance &nbsp;·&nbsp; Grant Fund Management &nbsp;·&nbsp; Payroll Management</p>
         </section>
 
         <section class="form-card" aria-labelledby="form-title">
@@ -313,10 +323,12 @@
                     <label for="service">Service Required <span class="required">*</span></label>
                     <select id="service" name="service" required>
                         <option value="">Select a service</option>
-                        <option value="Audit and Assurance">Audit and Assurance</option>
-                        <option value="Tax Services">Tax Services</option>
-                        <option value="Accounting Services">Accounting Services</option>
-                        <option value="Business Advisory">Business Advisory</option>
+                        <option value="Audit Services">Audit Services</option>
+                        <option value="Taxation Services">Taxation Services</option>
+                        <option value="Financial Statements">Financial Statements</option>
+                        <option value="Corporate Finance">Corporate Finance</option>
+                        <option value="Grant Fund Management">Grant Fund Management</option>
+                        <option value="Payroll Management">Payroll Management</option>
                         <option value="Other">Other</option>
                     </select>
                 </div>
@@ -333,8 +345,8 @@
 
                 <button type="submit">Submit Consultation Request</button>
                 <p class="notice">
-                    Please do not include confidential financial records or sensitive personal information.
-                    Submitting sends these details to Formspree and to the inbox configured for this form. On its free plan, Formspree keeps a 30-day submission history. Please do not include confidential financial records or sensitive personal information.
+                    Submitting sends these details through Formspree to the inbox configured for this form.
+                    Its free plan keeps a 30-day submission history. Please do not include confidential financial records or sensitive personal information.
                 </p>
 
 
@@ -343,8 +355,8 @@
     </main>
 
     <footer>
-        <p>Accounting &amp; Advisory Services</p>
-        <p>Demonstration website — not an official company website.</p>
+        <p>Victor &amp; Morgan Associates · Chartered Accountants</p>
+        <p>Demonstration concept only — not an official company website.</p>
     </footer>
 
 </body>
